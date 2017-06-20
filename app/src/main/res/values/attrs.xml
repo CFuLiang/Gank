@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="LoadingView">
+
+        <attr name="view_size" format="enum">
+            <enum name="small" value="0" />
+            <enum name="large" value="1" />
+        </attr>
+
+        <attr name="color_normal" format="color" />
+        <attr name="color_success" format="color" />
+        <attr name="color_failed" format="color" />
+        <attr name="color_empty" format="color" />
+
+    </declare-styleable>
+
+</resources>

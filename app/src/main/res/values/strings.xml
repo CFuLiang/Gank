@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">干货集中营</string>
+    <string name="about">\n简 书：<a href="http://www.jianshu.com/u/3e0ca527405d">付亮</a>\n\n邮箱：developer_lfu@163.com</string>
+    <string name="error_text">啊哦，获取数据失败了哦，请检查网络设置！\n点击重试</string>
+</resources>

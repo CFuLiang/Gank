@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="title_list">
+        <item>all</item>
+        <item>Android</item>
+        <item>iOS</item>
+        <item>前端</item>
+        <item>休息视频</item>
+        <item>福利</item>
+        <item>拓展资源</item>
+        <item>我的收藏</item>
+    </string-array>
+
+    <string-array name="icon_list">
+        <item>@drawable/all</item>
+        <item>@drawable/android</item>
+        <item>@drawable/ios</item>
+        <item>@drawable/web</item>
+        <item>@drawable/video</item>
+        <item>@drawable/welfare</item>
+        <item>@drawable/expand</item>
+        <item>@drawable/collect_blue</item>
+    </string-array>
+
+    <string-array name="icon_list_normal">
+        <item>@drawable/all_black</item>
+        <item>@drawable/android_black</item>
+        <item>@drawable/ios_black</item>
+        <item>@drawable/web_black</item>
+        <item>@drawable/video_black</item>
+        <item>@drawable/welfare_black</item>
+        <item>@drawable/expand_black</item>
+        <item>@drawable/collect_black</item>
+    </string-array>
+
+
+</resources>

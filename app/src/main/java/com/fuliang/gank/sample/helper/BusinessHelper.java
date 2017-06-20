@@ -1,0 +1,17 @@
+package com.fuliang.gank.sample.helper;
+
+import com.fuliang.gank.sample.http.InterfaceAPI;
+import com.fuliang.gank.sample.model.ResponseInfo;
+
+import rx.Observable;
+
+/**
+ * Created by lfu on 2017/6/8.
+ */
+
+public class BusinessHelper {
+
+    public static Observable<ResponseInfo> getAllData(String type,String pageSize ,String page){
+        return new InterfaceAPI().getAllData(type,pageSize,page);
+    }
+}
