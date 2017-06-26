@@ -22,6 +22,16 @@ import com.fuliang.gank.sample.adapter.MenuAdapter;
 import com.fuliang.gank.sample.fragment.AllListFragment;
 import com.fuliang.gank.sample.fragment.CollectFragment;
 import com.fuliang.gank.sample.fragment.WelfareFragment;
+import com.fuliang.gank.sample.helper.BusinessHelper;
+import com.fuliang.gank.sample.model.WeatherModel;
+import com.fuliang.gank.sample.model.WeatherResponse;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+import rx.functions.Action1;
 
 public class SampleActivity extends AppCompatActivity{
 
@@ -33,6 +43,7 @@ public class SampleActivity extends AppCompatActivity{
     private CollectFragment collectFragment;
     private MenuAdapter adapter;
     private long exitTime = 0;
+    private WeatherModel model;
 
 
     @Override
@@ -70,6 +81,7 @@ public class SampleActivity extends AppCompatActivity{
                 showDialog();
             }
         });
+        getWeather();
     }
 
     @Override
@@ -151,6 +163,27 @@ public class SampleActivity extends AppCompatActivity{
 
     private String[] loadTitleString() {
         return getResources().getStringArray(R.array.title_list);
+    }
+
+    private void getWeather(){
+        Map<String,String > map = new HashMap<>();
+        model = new WeatherModel();
+        model.location = "beijing";
+        map.put("key",model.key);
+        map.put("location",model.location);
+        map.put("language",model.language);
+        map.put("unit",model.unit);
+        BusinessHelper.getWeather(map).subscribe(new Action1<WeatherResponse>() {
+            @Override
+            public void call(WeatherResponse weatherResponse) {
+
+            }
+        }, new Action1<Throwable>() {
+            @Override
+            public void call(Throwable throwable) {
+
+            }
+        });
     }
 
 }

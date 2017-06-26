@@ -98,6 +98,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/text_content"
                         android:layout_weight="1"
+                        android:maxLines="1"
                         android:layout_gravity="center_vertical"/>
 
                 </LinearLayout>
@@ -123,6 +124,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/text_content"
                         android:layout_gravity="center_vertical"
+                        android:maxLines="1"
                         android:text="6666"/>
 
                 </LinearLayout>
@@ -147,6 +149,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
+                        android:maxLines="1"
                         android:gravity="right"/>
 
                 </LinearLayout>

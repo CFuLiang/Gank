@@ -44,6 +44,17 @@ public class RetrofitClient {
                 .build();
     }
 
+    public RetrofitClient(int i){
+        String url = "https://api.seniverse.com/";
+        retrofit = new Retrofit.Builder()
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .baseUrl(url)
+                .client(getHttpClient())
+                .build();
+
+    }
+
     public InterfaceService getInterfaceService() {
         return retrofit.create(InterfaceService.class);
     }

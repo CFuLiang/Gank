@@ -8,6 +8,8 @@ public class URLHelper {
 
     public String URL = "http://gank.io/api/data/";
 
+    public String WeatherUrl = "https://api.seniverse.com/";
+
     public static URLHelper getInstance() {
         return Singleton.instance;
     }

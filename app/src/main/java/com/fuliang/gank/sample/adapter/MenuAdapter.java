@@ -36,7 +36,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> im
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_option,parent,false);
-        titleList = context.getResources().getStringArray(R.array.ld_activityScreenTitles);
+        titleList = context.getResources().getStringArray(R.array.title_list);
         iconNormal = getIcon(R.array.icon_list_normal);
         iconSelected = getIcon(R.array.icon_list);
         return new ViewHolder(view);

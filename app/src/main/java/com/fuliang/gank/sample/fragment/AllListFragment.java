@@ -55,17 +55,7 @@ public class AllListFragment extends Fragment implements WaveSwipeRefreshLayout.
     public View onCreateView(final LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.all_fragment_layout,container,false);
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-        LinearLayoutManager layoutManager = new MyLayoutManager(getActivity()){
-            @Override
-            public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
-                super.onLayoutChildren(recycler, state);
-                spruceAnimator = new Spruce.SpruceBuilder(recyclerView)
-                        .sortWith(new DefaultSort(100))
-                        .animateWith(DefaultAnimations.shrinkAnimator(recyclerView, 800),
-                                ObjectAnimator.ofFloat(recyclerView, "translationX", -recyclerView.getWidth(), 0f).setDuration(800))
-                        .start();
-            }
-        };
+        LinearLayoutManager layoutManager = new MyLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         swipeLayout = (WaveSwipeRefreshLayout)view.findViewById(R.id.swipe_layout);
         swipeLayout.setColorSchemeColors(ContextCompat.getColor(getActivity(),R.color.white),ContextCompat.getColor(getActivity(),R.color.white));
@@ -129,10 +119,6 @@ public class AllListFragment extends Fragment implements WaveSwipeRefreshLayout.
                 }
                 allDataList = responseInfo.results;
                 setViewData(isLoadMore);
-
-                if (spruceAnimator != null){
-                    spruceAnimator.start();
-                }
 
             }
         }, new Action1<Throwable>() {
@@ -199,9 +185,6 @@ public class AllListFragment extends Fragment implements WaveSwipeRefreshLayout.
         }
         if (allDataList.size()>0){
             setViewData(isLoadMore);
-            if (spruceAnimator != null){
-                spruceAnimator.start();
-            }
         }else {
             showFragment();
             getDataFromInternet();

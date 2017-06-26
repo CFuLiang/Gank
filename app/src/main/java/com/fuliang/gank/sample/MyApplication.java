@@ -22,7 +22,7 @@ public class MyApplication extends Application{
         if (saveTime == null){
             DataCache.instance.saveCacheData("fuliang","limitTime",nowTime);
         }else {
-            title = getResources().getStringArray(R.array.ld_activityScreenTitles);
+            title = getResources().getStringArray(R.array.title_list);
             int i = 0;
             if (nowTime - saveTime > 12*60*60*1000){
                 while (i<title.length-1){
